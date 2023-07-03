@@ -1,10 +1,12 @@
+import { RouterProvider } from 'react-router-dom';
 import './App.css';
+import router from './router/routing';
 
 function App() {
   return (
-    <div className="App">
-      : 7.3일 시작합니다. 
-    </div>
+    <>
+      <RouterProvider router={router}/>
+    </>
   );
 }
 
