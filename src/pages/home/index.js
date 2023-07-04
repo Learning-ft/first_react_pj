@@ -1,7 +1,20 @@
+import { styled } from "styled-components"
+import OneCard from "./one-card"
+import { container } from "../../styled/common"
 
 
 const Mainpage = () => {
-  return(<div>메인페이지 입니다. </div>)
+  return(
+    <Container>
+      <OneCard/>
+    </Container>
+
+  )
 }
 
 export default Mainpage
+
+
+const Container = styled.div`
+  ${container}
+`
