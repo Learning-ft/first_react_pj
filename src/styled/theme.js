@@ -1,6 +1,8 @@
 
 export const PALLET = {
-  primary: 'palevioletred',
+  primary: '#61B3AE',
+  primary2:'#EE5C26',
+  primary3: '#B7E1AE',
   background: {
     white: 'white',
     darkWihte: '#eeeeee'
@@ -9,6 +11,7 @@ export const PALLET = {
   selectBlack:{
     black: '#333333'
   },  
+
 }
 const FONT_SIZE = {
   small : "12px",
