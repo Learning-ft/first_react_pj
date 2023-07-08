@@ -1,9 +1,6 @@
-import {combineReducers} from '@reduxjs/toolkit' 
-import { crudSlilce } from './qalist'
+import { combineReducers } from '@reduxjs/toolkit';
+import crudSlice from '../reducer/qalist';
 
-// 전역상태 이름 
-const rootreducer = combineReducers({qalist: crudSlilce.list})
+const rootReducer = combineReducers({ qalist: crudSlice});
 
-
-export default rootreducer
-
+export default rootReducer;

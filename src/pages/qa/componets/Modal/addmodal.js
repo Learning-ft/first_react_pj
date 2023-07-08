@@ -1,42 +1,63 @@
 import { styled } from "styled-components"
 import { flexB } from "../../../../styled/common"
 import { Button} from "react-bootstrap"
+import { useRef } from "react"
+import { useDispatch } from "react-redux"
+import { addQalist } from "../../../../reducer/qalist"
 
 
 
 const ModalAdd = ({onClose}) => {
+  const dispatch = useDispatch();
+
+  const InputValue  = useRef('')
+  const TextAreaValue = useRef('')
 
 
+
+  const submit= (e) => {
+    e.preventDefault();
+    const title = InputValue.current.value;
+    const content = TextAreaValue.current.value;
+    console.log(title)
+    console.log(content)  
+    const newAdd = {
+      title,
+      content,
+    }
+    dispatch(addQalist(newAdd))  
+    
+  }
 
 
   return(
-    <Wrraper>
-        <Form>
+    <Wrapper>
+        <Form onSubmit={submit}>
           <Title>
             <ContentTT>질문 등록</ContentTT>
             <Button onClick={onClose}>X</Button>
           </Title>
           <Content>
             <SubTitle>글 제목</SubTitle>
-            <input placeholder="제목을 입력해주세요"/>
+            <input placeholder="제목을 입력해주세요" ref={InputValue} type="text"/>
             <SubConTent>
               <SubTitle>내용</SubTitle>
-              <textarea placeholder="내용을 입력해주세요"></textarea>
+              <textarea placeholder="내용을 입력해주세요" ref={TextAreaValue} type='textarea'></textarea>
             </SubConTent>
           </Content>
-          <Button>ADD</Button>
+          <Button type="submit">ADD</Button>
         </Form>
-    </Wrraper>
+    </Wrapper>
   )
 }
 
 export default ModalAdd
 
+// form은 클릭에 onClick={submit} 이거 넣어줘야한다. 아니면 type="submit"  
 
 
 
-
-const Wrraper = styled.div`
+const Wrapper = styled.div`
   width: 460px;
   height: 560px;
   z-index: 1000;

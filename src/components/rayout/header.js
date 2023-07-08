@@ -1,6 +1,7 @@
 import Stack from 'react-bootstrap/Stack';
 import { styled } from 'styled-components';
 import { container } from '../../styled/common';
+import { Link } from 'react-router-dom';
 
 
 
@@ -11,11 +12,11 @@ const Header = () => {
     <Wrrapper>
       <Container>
         <Stack direction="horizontal" gap={3}>
-        <div className="p-2">로고</div>
-        <div className="p-2 ms-auto">로그인</div>
+        <Link to={'/'} className="p-2">로고</Link>
+        <Link to={'/Login'} className="p-2 ms-auto">로그인</Link>
         <div className="vr" />
-        <div className="p-2">회원가입</div>
-        <div className="p-2">Q&A</div>
+        <Link to={'/SignUp'} className="p-2">회원가입</Link>
+        <Link to={'/QaPage'} className="p-2">Q&A</Link>
         </Stack>
       </Container>
     </Wrrapper>

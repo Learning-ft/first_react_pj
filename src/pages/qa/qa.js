@@ -2,6 +2,7 @@ import { styled } from "styled-components"
 import { Button } from "react-bootstrap"
 import ModalAdd from "./componets/Modal/addmodal"
 import { useState } from "react"
+import Qalists from "./componets/List/qa-list"
 
 
 const QaPage = () => {
@@ -16,6 +17,8 @@ const QaPage = () => {
     setIsmodal(false)
   }
 
+
+
   return(
     <>
       {isModal && <ModalAdd onClose={onClose} />}
@@ -28,10 +31,11 @@ const QaPage = () => {
         <div>
             <ContentTT>질문/답변</ContentTT>
             <Content>내가 궁금했던 내용을 질문하고, 아는 질문에는 댓글도 남겨주세요.</Content>
-            <StyledButton onClick={handleOpenModal} isModal={isModal}>등록하기</StyledButton>
+            <StyledButton onClick={handleOpenModal} >등록하기</StyledButton>
         </div>
         <div></div>
       </Continer>
+      <Qalists/>
     </>
   )
 }
